@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dlnvx67g10r2d"
+path.s3tc="res://.godot/imported/ImageToStl.com_-2e12c21d-b8cb-4439-9605-1cb0f5539a6b_0+(1)_KK cf_m_hair_f_25_00 4324 light.jpg-c3ed8a0eb20bffb0b8b408ad4342378b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "5f0f41931de89ed8b80e54e439b52d48"
+}
+
+[deps]
+
+source_file="res://ImageToStl.com_-2e12c21d-b8cb-4439-9605-1cb0f5539a6b_0+(1)_KK cf_m_hair_f_25_00 4324 light.jpg"
+dest_files=["res://.godot/imported/ImageToStl.com_-2e12c21d-b8cb-4439-9605-1cb0f5539a6b_0+(1)_KK cf_m_hair_f_25_00 4324 light.jpg-c3ed8a0eb20bffb0b8b408ad4342378b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

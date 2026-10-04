@@ -1,0 +1,6 @@
+Staged edits to implement:
+1) app/utils/file_manager.py: add read_text_file()
+2) app/utils/actions.py: add branches for FILE_READ: and FILE_EXPLAIN:
+   - if file ext is pdf => delegate to PDF_READ/PDF_EXPLAIN_PAGE
+   - else read text and call analyze_command_with_ai() with a prompt
+

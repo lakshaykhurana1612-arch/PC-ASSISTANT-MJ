@@ -1,0 +1,21 @@
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+logs/
+*.log
+/Desktop/
+/pdf files/
+debug.wav
+test.wav
+developer_cache.json
+PyWhatKit_DB.txt
+*.db
+*.sqlite
+*.sqlite3

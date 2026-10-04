@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://c8s6ldsq3bra8"]
+
+[ext_resource type="Script" path="res://scripts/avatar_controller.gd" id="1_7ek7s"]
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="2_gc2rd"]
+[ext_resource type="Script" path="res://scripts/animation_manager.gd" id="3_wqkrp"]
+[ext_resource type="Script" path="res://network/websocket_server.gd" id="4_lpjh8"]
+[ext_resource type="PackedScene" uid="uid://ca8bupfra1app" path="res://assets/mj.glb" id="5_lg0cf"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_stand"]
+animation = &"Standing Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_stretch"]
+animation = &"Arm Stretching"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_sleep"]
+animation = &"Male Laying Pose"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_excited"]
+animation = &"Excited"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_listen"]
+animation = &"Listening To Music"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_think"]
+animation = &"Thinking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_talk"]
+animation = &"Talking On Phone"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_pray"]
+animation = &"Praying"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationTreeStateMachine"]
+states/0/node = SubResource("AnimationNode_stand")
+states/0/position = Vector2(200, 40)
+states/1/node = SubResource("AnimationNode_stretch")
+states/1/position = Vector2(200, 120)
+states/2/node = SubResource("AnimationNode_sleep")
+states/2/position = Vector2(200, 200)
+states/3/node = SubResource("AnimationNode_excited")
+states/3/position = Vector2(200, 280)
+states/4/node = SubResource("AnimationNode_listen")
+states/4/position = Vector2(200, 360)
+states/5/node = SubResource("AnimationNode_think")
+states/5/position = Vector2(200, 440)
+states/6/node = SubResource("AnimationNode_talk")
+states/6/position = Vector2(200, 520)
+states/7/node = SubResource("AnimationNode_pray")
+states/7/position = Vector2(200, 600)
+transitions = []
+
+[node name="MJ" type="Node3D"]
+
+script = ExtResource("1_7ek7s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationTreeStateMachine")
+anim_player = NodePath("../AnimationPlayer")
+
+parameters/playback = NodePath("parameters/playback")
+
+[node name="Mesh" parent="." instance=ExtResource("5_lg0cf")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3.5)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.707107, 0, 0.707107, 0.408248, 0.816497, 0.408248, -0.57735, 0.57735, -0.57735, 0, 5, 5)
+light_energy = 1.5
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_gc2rd")
+
+[node name="AnimationManager" type="Node" parent="."]
+script = ExtResource("3_wqkrp")
+
+[node name="WebSocketServer" type="Node" parent="."]
+script = ExtResource("4_lpjh8")
+

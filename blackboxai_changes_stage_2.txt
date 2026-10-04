@@ -1,0 +1,15 @@
+Planned code changes (will execute next):
+1) app/utils/file_manager.py
+   - add read_text_file(path, max_chars=20000) which returns safe truncated text.
+2) app/utils/actions.py
+   - import read_text_file
+   - add steps:
+     - FILE_READ:
+         - find file
+         - if pdf => convert to PDF_READ
+         - else read_text_file and then call analyze_command_with_ai() to summarize.
+     - FILE_EXPLAIN:
+         - if pdf => convert to PDF_EXPLAIN_PAGE when given page no else PDF_READ
+         - else read_text_file and call analyze_command_with_ai() to explain for user request.
+   - ensure returns ai text (may include CHAT:) and speak() in main handles CHAT.
+
